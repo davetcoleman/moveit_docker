@@ -2,14 +2,16 @@ FROM ros:jade-ros-core
 MAINTAINER Dave Coleman dave@dav.ee
 
 # download moveit source
-RUN mkdir -p ws_moveit/src && \
+RUN mkdir -p /root/ws_moveit/src && \
     cd ws_moveit/src && \
     wstool init . && \
     wstool merge https://raw.github.com/ros-planning/moveit_docs/indigo-devel/moveit.rosinstall && \
     wstool update
 
 # download deps
-#RUN rosdep install -y --from-paths . --ignore-src --rosdistro jade
+RUN apt-get update && \
+    rosdep install -y --from-paths . --ignore-src --rosdistro jade
 
 # build repo
-#RUN catkin build
+RUN source /ros_entrypoint.sh && \
+    catkin build
