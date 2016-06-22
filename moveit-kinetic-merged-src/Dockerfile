@@ -1,4 +1,4 @@
-FROM ros:jade-ros-core
+FROM ros:kinetic-ros-core
 MAINTAINER Dave Coleman dave@dav.ee
 
 # download moveit source
@@ -9,7 +9,7 @@ RUN mkdir -p ws_moveit/src && \
     wstool update
 
 # download deps
-#RUN rosdep install -y --from-paths . --ignore-src --rosdistro jade
+#RUN rosdep install -y --from-paths . --ignore-src --rosdistro kinetic
 
 # build repo
 #RUN catkin build
