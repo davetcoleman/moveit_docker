@@ -17,9 +17,8 @@ This repo hosts the :whale: Dockerfiles used to generate images for [MoveIt!](mo
 
 ## Layout
 
-For each distribution there are 3 images, built on top of a standard OSRF image:
+For each distribution there are 2 images, built on top of a standard OSRF-ROS image:
 
  - [osrf/ros:jade-desktop](https://github.com/osrf/docker_images/blob/master/ros/jade/jade-desktop/Dockerfile) ROS Jade Desktop
- - [moveit-jade-source](https://github.com/davetcoleman/moveit_docker/blob/master/jade/source/Dockerfile): contains all installed debian dependencies and all MoveIt! source code downloaded to ~/ws_moveit/src
- - [moveit-jade-build](https://github.com/davetcoleman/moveit_docker/blob/master/jade/build/Dockerfile): built on top of moveit-jade-source, contains a ``catkin build`` version of the same workspace
+ - [moveit-jade-source](https://github.com/davetcoleman/moveit_docker/blob/master/jade/source/Dockerfile): contains all dependencies and a full MoveIt! workspace downloaded and built to ~/ws_moveit/src
  - [moveit-jade-release](https://github.com/davetcoleman/moveit_docker/blob/master/jade/release/Dockerfile): the full debian-based install of MoveIt! using apt-get
