@@ -10,7 +10,7 @@ This repo hosts the :whale: Dockerfiles used to generate images for [MoveIt!](mo
 
 ## Build
 
-    docker build -t davetcoleman/moveit_docker:moveit-jade-source ./Dockerfile
+    docker build -t davetcoleman/moveit_docker:moveit-jade-source .
 
 ## Layout
 
