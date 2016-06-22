@@ -1,4 +1,7 @@
-FROM davetcoleman/moveit_docker:jade-src
+# davetcoleman/moveit_docker:moveit-jade-build
+# Builds the moveit source code
+
+FROM davetcoleman/moveit_docker:moveit-jade-source
 MAINTAINER Dave Coleman dave@dav.ee
 
 ENV CATKIN_WS=/root/ws_moveit

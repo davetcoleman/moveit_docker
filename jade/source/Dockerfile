@@ -1,4 +1,7 @@
-FROM ros:jade-ros-base
+# davetcoleman/moveit_docker:moveit-jade-source
+# Downloads the moveit source code and install remaining debian dependencies
+
+FROM davetcoleman/moveit_docker:jade-base
 MAINTAINER Dave Coleman dave@dav.ee
 
 ENV CATKIN_WS=/root/ws_moveit
@@ -11,10 +14,5 @@ RUN mkdir -p $CATKIN_WS/src && \
     wstool update
 
 # download deps
-RUN apt-get update && \
+RUN cd $CATKIN_WS/src && \
     rosdep install -y --from-paths . --ignore-src --rosdistro jade
-
-# build repo
-#RUN source /ros_entrypoint.sh && \
-#    cd $CATKIN_WS
-#    catkin build
