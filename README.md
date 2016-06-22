@@ -5,7 +5,7 @@ This repo hosts the :whale: Dockerfiles used to generate images for [MoveIt!](mo
 
 ![Docker Stars](https://img.shields.io/docker/stars/davetcoleman/moveit_docker.svg)](https://registry.hub.docker.com/davetcoleman/moveit_docker/)
 
-[![Compare Images](https://badge.imagelayers.io/davetcoleman/moveit_docker:latest.svg)](https://imagelayers.io/?images=davetcoleman/moveit_docker)
+[![Compare Images](https://imagelayers.io/badge/davetcoleman/moveit_docker:latest.svg)](https://imagelayers.io/?images=davetcoleman/moveit_docker:latest)
 
 ## Usage
 
