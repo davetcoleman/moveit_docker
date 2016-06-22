@@ -1,13 +1,11 @@
 # MoveIt! Docker Images
 This repo hosts the :whale: Dockerfiles used to generate images for [MoveIt!](moveit.ros.org):
 
-[![Docker Pulls](https://img.shields.io/docker/pulls/davetcoleman/moveit_docker.svg?maxAge=2592000)]()
+[![Docker Pulls](https://img.shields.io/docker/pulls/davetcoleman/moveit_docker.svg?maxAge=2592000)](https://hub.docker.com/r/davetcoleman/moveit_docker/)
 
-[MoveIt ![Docker Pulls](https://img.shields.io/docker/pulls/_/moveit.svg)
+![Docker Stars](https://img.shields.io/docker/stars/davetcoleman/moveit_docker.svg)](https://registry.hub.docker.com/davetcoleman/moveit_docker/)
 
-![Docker Stars](https://img.shields.io/docker/stars/_/moveit.svg)](https://registry.hub.docker.com/_/moveit/)
-
-[![Compare Images](https://badge.imagelayers.io/moveit:latest.svg)](https://imagelayers.io/?images=moveit:indigo-moveit-core)
+[![Compare Images](https://badge.imagelayers.io/davetcoleman/moveit_docker:latest.svg)](https://imagelayers.io/?images=davetcoleman/moveit_docker)
 
 ## Usage
 
