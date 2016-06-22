@@ -1,7 +1,8 @@
 # davetcoleman/moveit_docker:moveit-jade-source
 # Downloads the moveit source code and install remaining debian dependencies
 
-FROM davetcoleman/moveit_docker:jade-base
+#FROM davetcoleman/moveit_docker:jade-base
+FROM osrf/ros:jade-desktop
 MAINTAINER Dave Coleman dave@dav.ee
 
 ENV CATKIN_WS=/root/ws_moveit
