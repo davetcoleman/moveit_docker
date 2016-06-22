@@ -5,6 +5,6 @@ FROM ros:jade-ros-base
 MAINTAINER Dave Coleman dave@dav.ee
 
 RUN apt-get update && \
-    apt-get upgrade
+    apt-get upgrade -y
 
 RUN apt-get install -y ros-jade-rviz
