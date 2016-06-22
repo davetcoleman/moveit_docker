@@ -7,16 +7,20 @@ This repo hosts the :whale: Dockerfiles used to generate images for [MoveIt!](mo
 
 ## Usage
 
-    docker run -it davetcoleman/moveit-jade-src
+    docker run -it davetcoleman/moveit_docker:moveit-jade-source
 
 ## Build
 
+    cd jade/source
     docker build -t davetcoleman/moveit_docker:moveit-jade-source .
 
 ## Layout
 
-For each distribution there are 2 images, built on top of a standard OSRF-ROS image:
+For each distribution there are 2 images, built on top of a standard [osrf/ros:jade-desktop](https://github.com/osrf/docker_images/blob/master/ros/jade/jade-desktop/Dockerfile) image:
 
- - [osrf/ros:jade-desktop](https://github.com/osrf/docker_images/blob/master/ros/jade/jade-desktop/Dockerfile) ROS Jade Desktop
+ - [moveit-indigo-source](https://github.com/davetcoleman/moveit_docker/blob/master/indigo/source/Dockerfile): contains all dependencies and a full MoveIt! workspace downloaded and built to ~/ws_moveit/src
+ - [moveit-indigo-release](https://github.com/davetcoleman/moveit_docker/blob/master/indigo/release/Dockerfile): the full debian-based install of MoveIt! using apt-get
  - [moveit-jade-source](https://github.com/davetcoleman/moveit_docker/blob/master/jade/source/Dockerfile): contains all dependencies and a full MoveIt! workspace downloaded and built to ~/ws_moveit/src
  - [moveit-jade-release](https://github.com/davetcoleman/moveit_docker/blob/master/jade/release/Dockerfile): the full debian-based install of MoveIt! using apt-get
+
+TODO: kinetic, kinetic-merge
