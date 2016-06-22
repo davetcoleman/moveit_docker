@@ -7,4 +7,5 @@ MAINTAINER Dave Coleman dave@dav.ee
 RUN apt-get update && \
     apt-get upgrade -y
 
-RUN apt-get install -y ros-jade-moveit-full
+#TODO RUN apt-get install -y ros-jade-moveit-full
+RUN apt-get install -y ros-jade-moveit-*
