@@ -15,7 +15,7 @@ RUN wstool init . \
 
 # TODO there are missing dependencies
 # update apt-get because osrf image clears this cache and download deps
-#RUN apt-get update && apt-get upgrade -y && apt-get install -y \
+#RUN apt-get update && apt-get install -y \
 #      python-catkin-tools \
 #    && rosdep install -y \
 #      --from-paths . \
