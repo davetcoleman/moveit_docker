@@ -5,30 +5,28 @@ FROM osrf/ros:jade-desktop
 MAINTAINER Dave Coleman dave@dav.ee
 
 ENV CATKIN_WS=/root/ws_moveit
+RUN mkdir -p $CATKIN_WS/src
+WORKDIR $CATKIN_WS/src
 
 # download moveit source
-RUN mkdir -p $CATKIN_WS/src && \
-    cd $CATKIN_WS/src && \
-    wstool init . && \
-    wstool merge https://raw.github.com/ros-planning/moveit_docs/jade-devel/moveit.rosinstall && \
-    wstool update
+RUN wstool init . \
+    && wstool merge https://raw.github.com/ros-planning/moveit_docs/${ROS_DISTRO}-devel/moveit.rosinstall \
+    && wstool update
 
-# update apt-get because osrf image clears this cache
-RUN apt-get update && \
-    apt-get upgrade -y
+# update apt-get because osrf image clears this cache and download deps
+RUN apt-get update && apt-get upgrade -y && apt-get install -y \
+      python-catkin-tools \
+    && rosdep install -y \
+      --from-paths . \
+      --ignore-src \
+      --rosdistro ${ROS_DISTRO} \
+    && rm -rf /var/lib/apt/lists/*
 
-# download deps
-RUN cd $CATKIN_WS/src && \
-    rosdep install -y --from-paths . --ignore-src --rosdistro jade
-
-# install catkin
-RUN apt-get install -y python-catkin-tools
-
-# HACK, bad practice
-RUN rm /bin/sh \
+# HACK, replacing shell with bash for later docker build commands
+RUN mv /bin/sh /bin/sh-old \
     && ln -s /bin/bash /bin/sh
 
 # build repo
-RUN source /ros_entrypoint.sh && \
-    cd $CATKIN_WS && \
-    catkin build --no-status
+WORKDIR $CATKIN_WS
+RUN source /ros_entrypoint.sh \
+    && catkin build --no-status
