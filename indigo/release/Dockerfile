@@ -4,8 +4,8 @@
 FROM osrf/ros:indigo-desktop
 MAINTAINER Dave Coleman dave@dav.ee
 
-RUN apt-get update && \
-    apt-get upgrade -y
-
+RUN apt-get update \
+ && apt-get upgrade -y \
+ && apt-get install -y ros-indigo-moveit-* \
+ && rm -rf /var/lib/apt/lists/*
 #TODO RUN apt-get install -y ros-indigo-moveit-full
-RUN apt-get install -y ros-indigo-moveit-*
