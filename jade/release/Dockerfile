@@ -4,6 +4,7 @@
 FROM osrf/ros:jade-desktop
 MAINTAINER Dave Coleman dave@dav.ee
 
+# apt-commands are combined in single RUN statement with lists folder removal to reduce image size
 RUN apt-get update \
  && apt-get upgrade -y \
  && apt-get install -y ros-jade-moveit-* \
