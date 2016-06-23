@@ -4,8 +4,8 @@
 FROM osrf/ros:jade-desktop
 MAINTAINER Dave Coleman dave@dav.ee
 
-RUN apt-get update && \
-    apt-get upgrade -y
-
+RUN apt-get update \
+ && apt-get upgrade -y \
+ && apt-get install -y ros-jade-moveit-* \
+ && rm -rf /var/lib/apt/lists/*
 #TODO RUN apt-get install -y ros-jade-moveit-full
-RUN apt-get install -y ros-jade-moveit-*
