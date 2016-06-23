@@ -6,7 +6,15 @@ This repo hosts the Dockerfiles used to generate images for [MoveIt!](moveit.ros
 
 ## Usage
 
+For a built-by-source image of MoveIt:
+
     docker run -it davetcoleman/moveit_docker:moveit-jade-source
+
+For a debian-installed image of MoveIt:
+
+    docker run -it davetcoleman/moveit_docker:moveit-jade-release
+
+Any of the three current distros work: [indigo|jade|kinetic]
 
 ## Build
 
