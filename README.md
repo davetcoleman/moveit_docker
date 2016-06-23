@@ -1,9 +1,8 @@
 # MoveIt! Docker Images
-This repo hosts the :whale: Dockerfiles used to generate images for [MoveIt!](moveit.ros.org):
+This repo hosts the Dockerfiles used to generate images for [MoveIt!](moveit.ros.org) :whale:
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/davetcoleman/moveit_docker.svg?maxAge=2592000)](https://hub.docker.com/r/davetcoleman/moveit_docker/)
 [![Docker Stars](https://img.shields.io/docker/stars/davetcoleman/moveit_docker.svg)](https://registry.hub.docker.com/davetcoleman/moveit_docker/)
-[![Compare Images](https://imagelayers.io/badge/davetcoleman/moveit_docker:latest.svg)](https://imagelayers.io/?images=davetcoleman/moveit_docker:latest)
 
 ## Usage
 
@@ -18,8 +17,8 @@ This repo hosts the :whale: Dockerfiles used to generate images for [MoveIt!](mo
 
 For each ROS distribution there are 2 images, built on top of a standard [osrf/ros:jade-desktop](https://github.com/osrf/docker_images/blob/master/ros/jade/jade-desktop/Dockerfile) image:
 
- - *source image*: contains all dependencies and a full MoveIt! workspace downloaded and built to ~/ws_moveit/src
- - *release image*: the full debian-based install of MoveIt! using apt-get
+ - **source image**: contains all dependencies and a full MoveIt! workspace downloaded and built to ~/ws_moveit/src
+ - **release image**: the full debian-based install of MoveIt! using apt-get
 
 ### Standard Images
 
