@@ -31,4 +31,4 @@ For each ROS distribution there are 2 images, built on top of a standard [osrf/r
 
 ### Experimental Images
 
- - [moveit-kinetic-merged](https://github.com/davetcoleman/moveit_docker/blob/master/kinetic/source/Dockerfile): builds MoveIt! Kinetic from source using the experimental merged repos repository from https://github.com/davetcoleman/moveit
+ - [moveit-kinetic-merged](https://github.com/davetcoleman/moveit_docker/blob/master/kinetic/source/Dockerfile): builds MoveIt! Kinetic from source using the [experimental merged repos repository](https://github.com/davetcoleman/moveit)
