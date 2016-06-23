@@ -13,18 +13,19 @@ RUN wstool init . \
     && wstool merge https://raw.githubusercontent.com/davetcoleman/moveit/${ROS_DISTRO}-devel/moveit.rosinstall \
     && wstool update
 
+# TODO there are missing dependencies
 # update apt-get because osrf image clears this cache and download deps
-RUN apt-get update && apt-get upgrade -y && apt-get install -y \
-      python-catkin-tools \
-    && rosdep install -y \
-      --from-paths . \
-      --ignore-src \
-      --rosdistro ${ROS_DISTRO} \
-    && rm -rf /var/lib/apt/lists/*
+#RUN apt-get update && apt-get upgrade -y && apt-get install -y \
+#      python-catkin-tools \
+#    && rosdep install -y \
+#      --from-paths . \
+#      --ignore-src \
+#      --rosdistro ${ROS_DISTRO} \
+#    && rm -rf /var/lib/apt/lists/*
 
 # HACK, replacing shell with bash for later docker build commands
-RUN mv /bin/sh /bin/sh-old \
-    && ln -s /bin/bash /bin/sh
+#RUN mv /bin/sh /bin/sh-old \
+#    && ln -s /bin/bash /bin/sh
 
 # build repo
 WORKDIR $CATKIN_WS

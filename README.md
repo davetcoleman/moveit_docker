@@ -26,6 +26,9 @@ For each ROS distribution there are 2 images, built on top of a standard [osrf/r
  - [moveit-indigo-release](https://github.com/davetcoleman/moveit_docker/blob/master/indigo/release/Dockerfile)
  - [moveit-jade-source](https://github.com/davetcoleman/moveit_docker/blob/master/jade/source/Dockerfile)
  - [moveit-jade-release](https://github.com/davetcoleman/moveit_docker/blob/master/jade/release/Dockerfile)
+
+### Pending Release of MoveIt! Kinetic
+
  - [moveit-kinetic-source](https://github.com/davetcoleman/moveit_docker/blob/master/kinetic/source/Dockerfile)
  - [moveit-kinetic-release](https://github.com/davetcoleman/moveit_docker/blob/master/jade/release/Dockerfile)
 
