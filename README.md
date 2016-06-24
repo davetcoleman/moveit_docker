@@ -1,25 +1,25 @@
 # MoveIt! Docker Images
 This repo hosts the Dockerfiles used to generate images for [MoveIt!](moveit.ros.org) :whale:
 
-[![Docker Pulls](https://img.shields.io/docker/pulls/davetcoleman/moveit_docker.svg?maxAge=2592000)](https://hub.docker.com/r/davetcoleman/moveit_docker/)
-[![Docker Stars](https://img.shields.io/docker/stars/davetcoleman/moveit_docker.svg)](https://registry.hub.docker.com/davetcoleman/moveit_docker/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/moveit/moveit_docker.svg?maxAge=2592000)](https://hub.docker.com/r/moveit/moveit_docker/)
+[![Docker Stars](https://img.shields.io/docker/stars/moveit/moveit_docker.svg)](https://registry.hub.docker.com/moveit/moveit_docker/)
 
 ## Usage
 
 For a built-by-source image of MoveIt:
 
-    docker run -it davetcoleman/moveit_docker:moveit-jade-source
+    docker run -it moveit/moveit_docker:moveit-jade-source
 
 For a debian-installed image of MoveIt:
 
-    docker run -it davetcoleman/moveit_docker:moveit-jade-release
+    docker run -it moveit/moveit_docker:moveit-jade-release
 
 Any of the three current distros work: [indigo|jade|kinetic]
 
 ## Build
 
     cd jade/source
-    docker build -t davetcoleman/moveit_docker:moveit-jade-source .
+    docker build -t moveit/moveit_docker:moveit-jade-source .
 
 ## Available Images
 
@@ -30,16 +30,16 @@ For each ROS distribution there are 2 images, built on top of a standard [osrf/r
 
 ### Standard Images
 
- - [moveit-indigo-source](https://github.com/davetcoleman/moveit_docker/blob/master/indigo/source/Dockerfile)
- - [moveit-indigo-release](https://github.com/davetcoleman/moveit_docker/blob/master/indigo/release/Dockerfile)
- - [moveit-jade-source](https://github.com/davetcoleman/moveit_docker/blob/master/jade/source/Dockerfile)
- - [moveit-jade-release](https://github.com/davetcoleman/moveit_docker/blob/master/jade/release/Dockerfile)
+ - [moveit-indigo-source](https://github.com/moveit/moveit_docker/blob/master/indigo/source/Dockerfile)
+ - [moveit-indigo-release](https://github.com/moveit/moveit_docker/blob/master/indigo/release/Dockerfile)
+ - [moveit-jade-source](https://github.com/moveit/moveit_docker/blob/master/jade/source/Dockerfile)
+ - [moveit-jade-release](https://github.com/moveit/moveit_docker/blob/master/jade/release/Dockerfile)
 
 ### Pending Release of MoveIt! Kinetic
 
- - [moveit-kinetic-source](https://github.com/davetcoleman/moveit_docker/blob/master/kinetic/source/Dockerfile)
- - [moveit-kinetic-release](https://github.com/davetcoleman/moveit_docker/blob/master/jade/release/Dockerfile)
+ - [moveit-kinetic-source](https://github.com/moveit/moveit_docker/blob/master/kinetic/source/Dockerfile)
+ - [moveit-kinetic-release](https://github.com/moveit/moveit_docker/blob/master/jade/release/Dockerfile)
 
 ### Experimental Images
 
- - [moveit-kinetic-merged](https://github.com/davetcoleman/moveit_docker/blob/master/kinetic/source/Dockerfile): builds MoveIt! Kinetic from source using the [experimental merged repos repository](https://github.com/davetcoleman/moveit)
+ - [moveit-kinetic-merged](https://github.com/moveit/moveit_docker/blob/master/kinetic/source/Dockerfile): builds MoveIt! Kinetic from source using the [experimental merged repos repository](https://github.com/moveit/moveit)
