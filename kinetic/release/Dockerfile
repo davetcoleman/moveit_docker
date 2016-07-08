@@ -1,4 +1,4 @@
-# davetcoleman/moveit_docker:moveit-kinetic-release
+# moveit/moveit_docker:moveit-kinetic-release
 # Full debian-based install of MoveIt! using apt-get
 
 FROM osrf/ros:kinetic-desktop

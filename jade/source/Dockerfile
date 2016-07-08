@@ -1,4 +1,4 @@
-# davetcoleman/moveit_docker:moveit-jade-source
+# moveit/moveit_docker:moveit-jade-source
 # Downloads the moveit source code and install remaining debian dependencies
 
 FROM osrf/ros:jade-desktop

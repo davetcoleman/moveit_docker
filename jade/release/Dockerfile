@@ -1,4 +1,4 @@
-# davetcoleman/moveit_docker:moveit-jade-release
+# moveit/moveit_docker:moveit-jade-release
 # Full debian-based install of MoveIt! using apt-get
 
 FROM osrf/ros:jade-desktop

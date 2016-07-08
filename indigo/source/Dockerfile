@@ -1,4 +1,4 @@
-# davetcoleman/moveit_docker:moveit-indigo-source
+# moveit/moveit_docker:moveit-indigo-source
 # Downloads the moveit source code and install remaining debian dependencies
 
 FROM osrf/ros:indigo-desktop

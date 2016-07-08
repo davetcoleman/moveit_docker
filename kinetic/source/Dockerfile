@@ -1,4 +1,4 @@
-# davetcoleman/moveit_docker:moveit-kinetic-source
+# moveit/moveit_docker:moveit-kinetic-source
 # Downloads the moveit source code and install remaining debian dependencies
 
 FROM osrf/ros:kinetic-desktop

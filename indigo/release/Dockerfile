@@ -1,4 +1,4 @@
-# davetcoleman/moveit_docker:moveit-indigo-release
+# moveit/moveit_docker:moveit-indigo-release
 # Full debian-based install of MoveIt! using apt-get
 
 FROM osrf/ros:indigo-desktop
