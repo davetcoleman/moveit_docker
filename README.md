@@ -8,25 +8,44 @@ This repo hosts the Dockerfiles used to generate images for [MoveIt!](moveit.ros
 
 For a built-by-source image of MoveIt:
 
-    docker run -it moveit/moveit_docker:moveit-jade-source
+    docker run -it moveit/moveit_docker:moveit-kinetic-source
 
 For a debian-installed image of MoveIt:
 
-    docker run -it moveit/moveit_docker:moveit-jade-release
+    docker run -it moveit/moveit_docker:moveit-kinetic-release
 
 Any of the three current distros work: [indigo|jade|kinetic]
 
+### Using GUI's with Docker
+
+For more details see the [ROS tutorial](http://wiki.ros.org/docker/Tutorials/GUI) on this.
+
+    # This is not the safest way however, as you then compromise the access control to X server on your host
+    xhost +local:root # for the lazy and reckless
+
+    docker run -it \
+        --env="DISPLAY" \
+        --env="QT_X11_NO_MITSHM=1" \
+        --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
+        moveit/moveit_docker:moveit-kinetic-source
+    export containerId=$(docker ps -l -q)
+
+    # Close security hole:
+    xhost -local:root
+
+
 ## Build
 
-    cd jade/source
-    docker build -t moveit/moveit_docker:moveit-jade-source .
+    cd kinetic/source
+    docker build -t moveit/moveit_docker:moveit-kinetic-source .
 
 ## Available Images
 
-For each ROS distribution there are 2 images, built on top of a standard [osrf/ros:jade-desktop](https://github.com/osrf/docker_images/blob/master/ros/jade/jade-desktop/Dockerfile) image:
+For each ROS distribution there are 3 images, built on top of a standard [osrf/ros:kinetic-desktop](https://github.com/osrf/docker_images/blob/master/ros/kinetic/kinetic-desktop/Dockerfile) (or other distro version) image:
 
  - **source image**: contains all dependencies and a full MoveIt! workspace downloaded and built to ~/ws_moveit/src
  - **release image**: the full debian-based install of MoveIt! using apt-get
+ - **ci image**: an image optimized for running continuous integration with Travis and [moveit_ci](https://github.com/ros-planning/moveit_ci)
 
 ### Standard Images
 
@@ -34,12 +53,5 @@ For each ROS distribution there are 2 images, built on top of a standard [osrf/r
  - [moveit-indigo-release](https://github.com/moveit/moveit_docker/blob/master/indigo/release/Dockerfile)
  - [moveit-jade-source](https://github.com/moveit/moveit_docker/blob/master/jade/source/Dockerfile)
  - [moveit-jade-release](https://github.com/moveit/moveit_docker/blob/master/jade/release/Dockerfile)
-
-### Pending Release of MoveIt! Kinetic
-
  - [moveit-kinetic-source](https://github.com/moveit/moveit_docker/blob/master/kinetic/source/Dockerfile)
  - [moveit-kinetic-release](https://github.com/moveit/moveit_docker/blob/master/jade/release/Dockerfile)
-
-### Experimental Images
-
- - [moveit-kinetic-merged](https://github.com/moveit/moveit_docker/blob/master/kinetic/source/Dockerfile): builds MoveIt! Kinetic from source using the [experimental merged repos repository](https://github.com/moveit/moveit)

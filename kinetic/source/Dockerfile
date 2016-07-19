@@ -18,14 +18,14 @@ RUN apt-get update && \
     apt-get install -y \
         python-catkin-tools \
         less && \
+    rosdep install -y --from-paths . --ignore-src --rosdistro ${ROS_DISTRO} && \
     rm -rf /var/lib/apt/lists/*
-#    rosdep install -y --from-paths . --ignore-src --rosdistro ${ROS_DISTRO} && \
 
 # HACK, replacing shell with bash for later docker build commands
-#RUN mv /bin/sh /bin/sh-old && \
-#    ln -s /bin/bash /bin/sh
+RUN mv /bin/sh /bin/sh-old && \
+    ln -s /bin/bash /bin/sh
 
 # build repo
 WORKDIR $CATKIN_WS
-# RUN source /ros_entrypoint.sh && \
-#     catkin build --no-status
+RUN source /ros_entrypoint.sh #&& \
+    #    catkin build --no-status
