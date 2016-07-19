@@ -27,5 +27,5 @@ RUN mv /bin/sh /bin/sh-old && \
 
 # build repo
 WORKDIR $CATKIN_WS
-RUN source /ros_entrypoint.sh #&& \
-    #    catkin build --no-status
+RUN source /ros_entrypoint.sh && \
+    catkin build --no-status
