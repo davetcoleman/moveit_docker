@@ -18,7 +18,7 @@ RUN apt-get update && \
     apt-get install -y \
         python-catkin-tools \
         less && \
-    rosdep install -y --from-paths . --ignore-src --rosdistro ${ROS_DISTRO} && \
+    rosdep install -y --from-paths . --ignore-src --rosdistro ${ROS_DISTRO} --as-root=apt:false && \
     rm -rf /var/lib/apt/lists/*
 
 # HACK, replacing shell with bash for later docker build commands
